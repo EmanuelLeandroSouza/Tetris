@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Navigation;
 
 namespace Tetris
 {
@@ -72,6 +73,27 @@ namespace Tetris
                 grid[r, c] = 0;
             }
         }
+
+        private int ClearFullRows()
+        {
+            int cleared = 0;
+
+            for(int r  = Rows-1; r >= 0; r++)
+            {
+                if (IsRowFull(r))
+                {
+                    ClearRow(r);
+                    cleared++;
+                }
+                else if(cleared > 0)
+                {
+                    MoveRowDown(r, cleared);
+                }
+            }
+
+            return cleared;
+
+        }   
 
     }
 }
