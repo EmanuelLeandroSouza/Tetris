@@ -90,9 +90,7 @@ namespace Tetris
                     MoveRowDown(r, cleared);
                 }
             }
-
             return cleared;
-
         }   
 
     }
