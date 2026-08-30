@@ -22,7 +22,7 @@ namespace Tetris
         {
             foreach(Position p in Tiles[rotationState])
             {
-                yield return new Position(p.Row + offset.Row, p.Column, +offset.Column);
+                yield return new Position(p.Row + offset.Row + p.Column, + offset.Column);
             }
         }
 
